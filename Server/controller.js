@@ -2,9 +2,9 @@
 
 //This is where I will store waffle data
 let waffles = [
-    {id:0, name:'Basic Maple', syrup: 'Maple'},
-    {id:1, name:'Strawberry for days', syrup: 'Strawberry'},
-    {id:2, name:'Antioxidants Plus', syrup: 'Chocolate'}
+    {id:0, name:'Basic Buttermilk', syrup: 'Maple'},
+    {id:1, name:'Blueberry', syrup: 'Strawberry'},
+    {id:2, name:'Chocolate', syrup: 'Chocolate'}
 ]
 
 
@@ -40,7 +40,7 @@ module.exports={ //this get endpoint will send our entire waffles array to our f
             return waffle.id === +id
         })
 
-        myWaffle.name = updatedWaffle.name
+        myWaffle.syrup = updatedWaffle.name
         res.status(200).send(waffles)
     },
     //we want to delete a pet using the id number

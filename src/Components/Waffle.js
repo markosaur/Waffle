@@ -72,7 +72,8 @@ render(){
     }) 
     console.log(this.state)
     return(
-        <div className = "waffles-flex-div">
+        //this className div is incharge of the updated divs
+        <div className = "waffles-flex-div"> 
                 {mappedWaffles}
             <div>
                 <input placeholder='My name is what' onChange={(event)=>this.handleName(event.target.value)} value={this.state.waffleName}></input>

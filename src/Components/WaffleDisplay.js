@@ -5,7 +5,7 @@ export default class WaffleDisplay extends Component{
         super()
         this.state={
             edit:false,
-            editName: ''
+            editSyrup: ''
         }
     }
         
@@ -14,15 +14,15 @@ export default class WaffleDisplay extends Component{
                 edit: !this.state.edit
             })
         }
-        handleChangeName=(inputValue)=>{
+        handleChangeSyrup=(inputValue)=>{
             this.setState({
-                editName: inputValue
+                editSyrup: inputValue
             })
         }
 
         handleUpdateWaffle=(id)=>{ //this will be invoked by the customize button !
             let updatedWaffle = {
-                name: this.state.editName
+                name: this.state.editSyrup
             }
             axios.put(`/api/waffles/${id}`, updatedWaffle)
             .then(res =>{
@@ -41,7 +41,7 @@ export default class WaffleDisplay extends Component{
             })
         }
 
-        //still not working
+        //now it works
         
 
     render(){
@@ -51,22 +51,23 @@ export default class WaffleDisplay extends Component{
             <div> 
                 {!this.state.edit
                 ?
-                (<div>
-                <h3>{`Waffle: ${name}`}</h3> 
+                // this div will need to be a box
+                (<div> 
+                <h3>{`${name} Waffle`}</h3> 
                 <h4>{`${syrup} Syrup`}</h4>
                 <button onClick={this.handleToggle}>Edit</button>
                 <button onClick={()=>this.handleDeleteWaffle(this.props.waffle.id)}>Bye Waffle-licia</button>
                 </div>
                 )
                 :
+                //this div will need to have same class name as the above div for the box
                 (<div>    
-                <input placeholder="Change Name Here" onChange={(event)=>this.handleChangeName(event.target.value)} value={this.state.editName}/>  {/*inside this input, I need to reference handleUpdate and have an applicable function above it  and for the input */}
-                <button onClick={()=>this.handleUpdateWaffle(this.props.waffle.id)}>Customize</button>
+                <input placeholder="Change Syrup Here" onChange={(event)=>this.handleChangeSyrup(event.target.value)} value={this.state.editSyrup}/>  {/*inside this input, I need to reference handleUpdate and have an applicable function above it  and for the input */}
+                <button onClick={()=>this.handleUpdateWaffle(this.props.waffle.id)}>Upgrade</button>
                 <button onClick={this.handleDeleteWaffle}>Bye Waffle-licia</button>
                 </div>
                 )
                 }
-                {/* dfdh */}
             </div>
         )
     }

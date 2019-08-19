@@ -1,5 +1,25 @@
 body{
   height: 100vh;
   width: 100vw;
-  background-color: blueviolet
+  background-image: url(./waffle-image.jpg);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.waffles-flex-div{
+  min-width: ;width: 50vw;
+  min-height: 50vh;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+h1{
+  font-size: 100px;
+  color: yellow;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
