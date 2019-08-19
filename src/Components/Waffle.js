@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import WaffleDisplay from './WaffleDisplay'
+import './Waffle.css'
 
 export default class Waffle extends Component {
 constructor(){
@@ -72,13 +73,13 @@ render(){
     }) 
     console.log(this.state)
     return(
-        //this className div is incharge of the updated divs
+        //this className div is incharge of the updated divs dfdf
         <div className = "waffles-flex-div"> 
                 {mappedWaffles}
-            <div>
+            <div className= "waffleAdd">
                 <input placeholder='My name is what' onChange={(event)=>this.handleName(event.target.value)} value={this.state.waffleName}></input>
                 <input placeholder='Dibetes Juice' onChange={(event)=>this.handleSyrup(event.target.value)} value={this.state.waffleSyrup}></input>
-                <button onClick={this.handleAddWaffle}> Waffle My Heart</button> 
+                <button className="buttonAdd" onClick={this.handleAddWaffle}> Waffle My Heart</button> 
                 {/* When user clicks button, I want to post the name and syrup to the backend */}
                 
                 {/*When user clicks button, name and syrup will be deleted  */}

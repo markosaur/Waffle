@@ -2,7 +2,7 @@
 
 //This is where I will store waffle data
 let waffles = [
-    {id:0, name:'Basic Buttermilk', syrup: 'Maple'},
+    {id:0, name:'Buttermilk', syrup: 'Maple'},
     {id:1, name:'Blueberry', syrup: 'Strawberry'},
     {id:2, name:'Chocolate', syrup: 'Chocolate'}
 ]
