@@ -75,8 +75,8 @@ render(){
         <div className = "waffles-flex-div">
                 {mappedWaffles}
             <div>
-                <input placeholder='My name is what' onChange={(event)=>this.handleName(event.target.value)}></input>
-                <input placeholder='Dibetes Juice' onChange={(event)=>this.handleSyrup(event.target.value)}></input>
+                <input placeholder='My name is what' onChange={(event)=>this.handleName(event.target.value)} value={this.state.waffleName}></input>
+                <input placeholder='Dibetes Juice' onChange={(event)=>this.handleSyrup(event.target.value)} value={this.state.waffleSyrup}></input>
                 <button onClick={this.handleAddWaffle}> Waffle My Heart</button> 
                 {/* When user clicks button, I want to post the name and syrup to the backend */}
                 
